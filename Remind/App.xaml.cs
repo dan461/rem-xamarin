@@ -9,10 +9,20 @@ namespace Remind
     {
         public App()
         {
-            //InitializeComponent();
+            bool useXaml = true;
 
             var tabsCs = new TabbedPage { Title = "Remindful" };
-            tabsCs.Children.Add(new BasicListPage { Title = "Basic" });
+
+            if(useXaml)
+            {
+                tabsCs.Children.Add(new BasicListXaml { Title = "Reminders" });
+                tabsCs.Children.Add(new NewNoteTableViewXaml { Title = "Create" });
+                tabsCs.Children.Add(new BasicListXaml { Title = "Links" });
+            } else {
+                tabsCs.Children.Add(new BasicListPage { Title = "Reminder" });
+                tabsCs.Children.Add(new NewNoteTableView { Title = "Create" });
+                tabsCs.Children.Add(new BasicListPage { Title = "Links" });
+            }
 
             MainPage = tabsCs;
         }
