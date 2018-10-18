@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UserNotifications;
 
 using Foundation;
 using UIKit;
@@ -25,8 +26,19 @@ namespace Remind.iOS
             Xamarin.Calabash.Start();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+            GetUserAuth();
 
             return base.FinishedLaunching(app, options);
+        }
+
+        // Request permission from user for Local Notifications
+        private void GetUserAuth()
+        {
+            UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert, (approved, err) =>
+            {
+                // handle user approval 
+            });
+
         }
     }
 }

@@ -1,16 +1,22 @@
 ﻿using System;
 using Xamarin.Forms;
 using System.Diagnostics;
+using System.Collections.ObjectModel;
 
 
 namespace Remind
 {
     public class BasicListPage : ContentPage
     {
+        //ObservableCollection<Reminder> reminders = new ObservableCollection<Reminder>();
         public BasicListPage()
         {
             var listView = new ListView();
-            listView.ItemsSource = new[] { "a", "b", "c" };
+            listView.ItemsSource = new[] { "Reminder 1", "Reminder 2", "Reminder 3" };
+
+            //reminders.Add(new Reminder("Reminder 1", "grateful", DateTime.Today) { });
+            //reminders.Add(new Reminder("Reminder 2", "grateful", DateTime.Today) { });
+            //listView.ItemsSource = reminders;
 
             // using ItemTapped
             listView.ItemTapped += async (sender, e) => {

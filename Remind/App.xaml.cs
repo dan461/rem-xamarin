@@ -18,6 +18,7 @@ namespace Remind
                 tabsCs.Children.Add(new BasicListXaml { Title = "Reminders" });
                 tabsCs.Children.Add(new NewNoteTableViewXaml { Title = "Create" });
                 tabsCs.Children.Add(new BasicListXaml { Title = "Links" });
+                tabsCs.Children.Add(new NoteTestXaml { Title = "Note Test" });
             } else {
                 tabsCs.Children.Add(new BasicListPage { Title = "Reminder" });
                 tabsCs.Children.Add(new NewNoteTableView { Title = "Create" });
