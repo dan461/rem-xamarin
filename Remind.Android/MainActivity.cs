@@ -12,9 +12,6 @@ namespace Remind.Droid
     [Activity(Label = "Remind", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
-        // TODO put this in strings.xml. also used in LocalNoteService_droid 
-        static readonly string CHANNEL_ID = "remind_location_notification";
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -36,7 +33,8 @@ namespace Remind.Droid
 
             var channelName = Resources.GetString(Resource.String.channel_name);
             var channelDesc = GetString(Resource.String.channel_description);
-            var channel = new NotificationChannel(CHANNEL_ID, channelName, NotificationImportance.Default)
+            var channelID = GetString(Resource.String.channel_ID);
+            var channel = new NotificationChannel(channelID, channelName, NotificationImportance.Default)
             {
                 Description = channelDesc
             };

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UserNotifications;
+using Syncfusion.SfPicker.XForms.iOS;
 
 using Foundation;
 using UIKit;
@@ -25,6 +26,7 @@ namespace Remind.iOS
         {
             Xamarin.Calabash.Start();
             global::Xamarin.Forms.Forms.Init();
+            new SfPickerRenderer();
             LoadApplication(new App());
             GetUserAuth();
 

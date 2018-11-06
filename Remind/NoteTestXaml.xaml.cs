@@ -14,7 +14,7 @@ namespace Remind
 
         void OnButtonClicked(object sender, EventArgs args)
         {
-            DependencyService.Get<LocalNoteService>().TestNote("iOS Test", "Reminder test");
+            DependencyService.Get<LocalNoteService>().TestNote("Notification Test", "Reminder test");
         }
     }
 }

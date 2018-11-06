@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Remind.NewNoteView">
+    <ContentView.Content>
+        <StackLayout Padding="10, 50" HorizontalOptions="CenterAndExpand">
+            <TimePicker HorizontalOptions="CenterAndExpand"
+                        WidthRequest="300">
+                       
+            </TimePicker>
+                    
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

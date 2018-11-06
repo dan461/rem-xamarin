@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:picker="clr-namespace:Syncfusion.SfPicker.XForms;assembly=Syncfusion.SfPicker.XForms"
+             xmlns:local="clr-namespace:Remind"
+             x:Class="Remind.NoteCreationPage">
+    
+    <ContentPage.BindingContext>
+        <local:DateTimeViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Spacing="30">
+            <StackLayout Padding="10, 50" HorizontalOptions="CenterAndExpand" BackgroundColor="Silver"
+                     VerticalOptions="Start">
+                
+                <Label HorizontalOptions="Center" Text="Specific Reminder"/>
+                <Button x:Name="Btn_ShowDateTimePicker" Text="Set Specific Time"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Clicked="ShowDatePicker" />
+                
+                <local:DateTimePicker x:Name="DateTimePicker" ColumnHeaderHeight="40"
+                                      HorizontalOptions="CenterAndExpand"
+                                      VerticalOptions="Center"
+                                      PickerHeight="400"
+                                      PickerWidth="300"
+                                      PickerMode="Dialog"
+                                      SelectedItem="{Binding StartDate}"
+                                      OkButtonClicked="Handle_OkButtonClicked"/>
+                
+                <Button x:Name="Btn_SetSpecific"
+                    Text="Set Reminder"
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"
+                    Clicked="OnButtonClicked" />
+                
+                
+            </StackLayout>
+            
+            <StackLayout HorizontalOptions="CenterAndExpand" BackgroundColor="Silver" Padding="10"
+                         VerticalOptions="Start">
+                <Label HorizontalOptions="Center" Text="Random Reminders"/>
+                
+                <Button x:Name="Btn_ShowTimePicker" Text="Set Random Time"
+                        HorizontalOptions="Center"
+                        Clicked="ShowTimePicker"/>
+                
+                <TimePicker x:Name="TimePicker" HorizontalOptions="CenterAndExpand" IsVisible="false">
+                    
+                </TimePicker>
+                
+                <Button x:Name="Btn_SetRandom" Text="Set Reminder"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Clicked="SetRandomReminder"/>
+                
+            </StackLayout>
+            
+       </StackLayout>
+        
+        
+        <!--<StackLayout Padding="10, 20" BackgroundColor="Gray" HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="Start">
+            <Label HorizontalOptions="Center" Text="Set Random Reminder"/>
+            
+            
+            
+        </StackLayout>-->
+        
+        
+    </ContentPage.Content>
+</ContentPage>

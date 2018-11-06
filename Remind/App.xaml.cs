@@ -13,12 +13,14 @@ namespace Remind
 
             var tabsCs = new TabbedPage { Title = "Remindful" };
 
-            if(useXaml)
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mzk1OTRAMzEzNjJlMzMyZTMwaVJ6MlNsMVV0WTM5ODFyQnpxY1hzbG1EaGlCb21MVHhpSUN5SzYvV1B5bz0=");
+
+            if (useXaml)
             {
                 tabsCs.Children.Add(new BasicListXaml { Title = "Reminders" });
                 tabsCs.Children.Add(new NewNoteTableViewXaml { Title = "Create" });
                 tabsCs.Children.Add(new BasicListXaml { Title = "Links" });
-                tabsCs.Children.Add(new NoteTestXaml { Title = "Note Test" });
+                tabsCs.Children.Add(new NoteCreationPage { Title = "Note Creation" });
             } else {
                 tabsCs.Children.Add(new BasicListPage { Title = "Reminder" });
                 tabsCs.Children.Add(new NewNoteTableView { Title = "Create" });
